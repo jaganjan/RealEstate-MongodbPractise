@@ -1,0 +1,56 @@
+﻿@using System.Threading.Tasks
+@using RealEstate.Rentals
+@model RealEstate.Rentals.PostRental
+
+@{
+    ViewBag.Title = "add new item";
+}
+
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="col-lg-12">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        @Html.LabelFor(model => model.Desription, new {@class = "label-info"})
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.TextAreaFor(model => model.Desription);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        @Html.LabelFor(model => model.NumberofRooms, new {@class = "label-info"})
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.EditorFor(model => model.NumberofRooms);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        @Html.LabelFor(model => model.Price, new {@class = "label-info"})
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.EditorFor(model => model.Price);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        @Html.LabelFor(model => model.Address, new {@class = "label-info"})
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.TextAreaFor(model => model.Address);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-5 col-md-10">
+                        <input type="submit" value="PostRental" class="btn btn-default"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
